@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Demo</title>
+</head>
+<body>
+    <button id ='Counter'>0</button>
+    <script>
+        var handler = {
+            counter: 0,
+            inrement(ev){
+                // it wwont work because this wont point towards the target
+                this.counter++
+                ev.target.textContent = this.counter
+            }
+        }
+    button = document.getElementById('Counter')
+    button.addEventListener('click',increment)
+    function increment(ev){
+        let number = Number(button.textContent)
+        number++
+        ev.target.textContent = number
+
+    }</script>
+</body>
+</html>
